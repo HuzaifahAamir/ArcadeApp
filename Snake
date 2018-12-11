@@ -34,6 +34,7 @@ public class Snake implements ActionListener, KeyListener {
 	public final int RIGHT = 3;
 	public int direct = DOWN;
 	public int score;
+	public int level;
 	public static final Snake h = new Snake();
 	public Point head;
 	public Point food;
@@ -68,6 +69,7 @@ public class Snake implements ActionListener, KeyListener {
 		pause = false;
 		z = false;
 		score = 0;
+		level = 0;
 		tail = 0;
 		head = new Point(0,-1);
 		snake.clear();
@@ -123,9 +125,10 @@ public class Snake implements ActionListener, KeyListener {
 			if(food!= null) {
 				if(head.equals(food)) {
 					score += 10;
+					level++;
 					tail++;
-					food.setLocation(r.nextInt(79), r.nextInt(66));
-				}//if
+					food.setLocation(r.nextInt(70), r.nextInt(60));
+				}//if statement that updates when you eat the apple
 			}//if
 		}
 	}
@@ -141,8 +144,8 @@ public class Snake implements ActionListener, KeyListener {
 		for(Point point : snake) {
 			if(point.equals(new Point(x,y))) {
 				return false;
-			}
-		}
+			}// if
+		}//for
 		return true;
 	}//checked
 	
