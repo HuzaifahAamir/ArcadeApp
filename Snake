@@ -19,18 +19,19 @@ import javax.swing.Timer;
  * @author Brandon Li
  */
 public class Snake implements ActionListener, KeyListener {
+	public Timer timer = new Timer(20, this);
 	public Random r;
 	public JFrame jf;
 	public SnakePanel sp;
-	public Timer timer = new Timer(20, this);
-	
-	
 	public ArrayList<Point> snake = new ArrayList<Point>();
 	public int tik = 0;
 	public int tail;
 	public int time;
 	public boolean paused;
-	public final int UP =0, DOWN = 1, LEFT = 2, RIGHT = 3;
+	public final int UP =0; 
+	public final int DOWN = 1;
+	public final int LEFT = 2;
+	public final int RIGHT = 3;
 	public int direct = DOWN;
 	public int score;
 	public static final Snake h = new Snake();
